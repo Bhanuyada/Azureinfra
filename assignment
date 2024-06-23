@@ -96,4 +96,5 @@ The objective of this assignment is to set up a comprehensive Azure network envi
 
 
 ### Conclusion
-This assignment covers creating a robust Azure network infrastructure using VNets, Subnets, VMs, Load Balancers, and an Application Gateway. By following these steps, you will gain practical experience in setting up and managing Azure network resources, ensuring they are correctly configured for optimal performance and connectivity.
+This assignment covers creating a robust Azure network infrastructure using VNets, Subnets, VMs, Load Balancers, and an Application Gateway.
+By following these steps, you will gain practical experience in setting up and managing Azure network resources, ensuring they are correctly configured for optimal performance and connectivity.
