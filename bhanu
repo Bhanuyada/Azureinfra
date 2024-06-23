@@ -1,0 +1,99 @@
+## Azure Network and Virtual Machines Configuration Assignment
+
+### Objective
+The objective of this assignment is to set up a comprehensive Azure network environment, including Virtual Networks (VNets), Subnets, Virtual Machines (VMs), Load Balancers, and an Azure Application Gateway. The setup will follow a Hub and Spoke architecture to ensure optimal management and connectivity.
+
+
+### Steps
+
+#### Part A: Create a VNet with Two Subnets
+
+1. **Create a Virtual Network (VNet)**
+    - Name: `PrimaryVNet`
+    - Address space: `10.0.0.0/16`
+
+2. **Create Subnets within the VNet**
+    - **Subnet-1**
+        - Name: `Subnet1`
+        - Address range: `10.0.1.0/24`
+        - Deploy a Linux VM and a Windows VM in this subnet.
+    - **Subnet-2**
+        - Name: `Subnet2`
+        - Address range: `10.0.2.0/24`
+        - Deploy a SQL Database in this subnet.
+
+3. **Deploy Virtual Machines**
+    - **Linux VM in Subnet-1**
+        - Name: `LinuxVM`
+        - OS: Ubuntu 20.04
+        - Size: Standard B1s
+    - **Windows VM in Subnet-1**
+        - Name: `WindowsVM`
+        - OS: Windows Server 2019
+        - Size: Standard B1s
+    - **SQL Database in Subnet-2**
+        - Follow the Azure SQL Database creation process.
+
+#### Part B: Create Four VNets and Configure Hub and Spoke Architecture
+
+1. **Create Virtual Networks**
+    - **Management VNet (HUB)**
+        - Name: `ManagementVNet`
+        - Address space: `10.1.0.0/16`
+    - **Production VNet**
+        - Name: `ProductionVNet`
+        - Address space: `10.2.0.0/16`
+    - **Testing VNet**
+        - Name: `TestingVNet`
+        - Address space: `10.3.0.0/16`
+    - **Developing VNet**
+        - Name: `DevelopingVNet`
+        - Address space: `10.4.0.0/16`
+
+2. **Configure Peering (Hub and Spoke Architecture)**
+    - Peer each of the Spoke VNets (Production, Testing, Developing) with the Management VNet.
+
+3. **Deploy Virtual Machines in Each VNet**
+    - **Management VNet**
+        - VM Name: `ManagementVM`
+        - OS: Ubuntu 20.04
+        - Size: Standard B1s
+    - **Production VNet**
+        - VM Name: `ProductionVM`
+        - OS: Ubuntu 20.04
+        - Size: Standard B1s
+    - **Testing VNet**
+        - VM Name: `TestingVM`
+        - OS: Ubuntu 20.04
+        - Size: Standard B1s
+    - **Developing VNet**
+        - VM Name: `DevelopingVM`
+        - OS: Ubuntu 20.04
+        - Size: Standard B1s
+
+4. **Verify Connectivity**
+    - Ensure that `ManagementVM` can ping `ProductionVM`, `TestingVM`, and `DevelopingVM`.
+
+#### Part C: Create Internal and External Load Balancers
+
+1. **Internal Load Balancer**
+    - Create an Internal Load Balancer in the `ManagementVNet`.
+    - Add backend pools, health probes, and load balancing rules as necessary.
+
+2. **External Load Balancer**
+    - Create an External Load Balancer with a public IP address.
+    - Configure backend pools, health probes, and load balancing rules.
+
+#### Part D: Create and Test Azure Application Gateway
+
+1. **Create an Application Gateway**
+    - Create a new Application Gateway in the `ManagementVNet`.
+    - Configure the backend pool, routing rules, and listeners.
+
+2. **Test the Application Gateway**
+    - Deploy a sample web application and verify the load balancing and routing through the Application Gateway.
+
+
+
+### Conclusion
+This assignment covers creating a robust Azure network infrastructure using VNets, Subnets, VMs, Load Balancers, and an Application Gateway. By following these steps, you will gain practical experience in setting up and managing Azure network resources, ensuring they are correctly configured for optimal performance and connectivity.
